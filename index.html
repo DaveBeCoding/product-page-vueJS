@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <title>Product App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="nav-bar"></div>
+    <div id="app">
+      <div class="cart">
+        <p>Cart({{cart.length}})</p>
+      </div>
+      <product-three
+        :premium="premium"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeItem"
+      ></product-three>
+      <hr />
+      <product-one
+        :premium="premium"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeItem"
+      ></product-one>
+      <hr />
+      <product-two></product-two>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js" async defer></script>
+</html>
+<!-- <p v-else-if="onSale">{{checkSale}}</p> -->
